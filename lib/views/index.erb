@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  </head>
+  <body>
+    <nav class="pa3 pa4-ns">
+      <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">Gossip Site</a>
+        <div class="tc pb3">
+          <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Home">Home</a>
+          <a class="link dim gray f6 f5-ns dib mr3" href="/gossips/new/" title="About">New Gossip</a>
+        </div>
+    </nav>
+        <article class="mw9 center ph3-ns">
+                <div class="pa4">
+                  <div class="overflow-auto">
+          <table class="f6 w-100 mw8 center" cellspacing="0">
+            <thead>
+                <tr>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Id</th>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Name</th>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Content</th>
+                </tr>
+            </thead>
+            <tbody class="lh-copy">
+              <% gossips.each do | gossip | %>
+                <tr>
+                  <td class="pv3 pr3 bb b--black-20"><a href="/gossips/<%= gossip.id %>"><%= gossip.id %></td>
+                  <td class="pv3 pr3 bb b--black-20"><%= gossip.author %></td>
+                  <td class="pv3 pr3 bb b--black-20"><%= gossip.content %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

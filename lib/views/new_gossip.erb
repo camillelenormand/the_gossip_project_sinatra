@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  </head>
+  <body>
+      <nav class="pa3 pa4-ns">
+      <a class="link dim black b f1 f-headline-ns tc db mb3 mb4-ns" href="#" title="Home">Gossip Site</a>
+        <div class="tc pb3">
+          <a class="link dim gray f6 f5-ns dib mr3" href="/" title="Home">Home</a>
+          <a class="link dim gray f6 f5-ns dib mr3" href="/gossips/new/" title="About">New Gossip</a>
+          <a class="link dim gray f6 f5-ns dib mr3" href="#" title="Store"></a>
+          <a class="link dim gray f6 f5-ns dib" href="#" title="Contact"></a>
+        </div>
+    </nav>
+      <article class="pa4 black-80 mb3">
+      <form action='/gossips/new/' method='POST' accept-charset="utf-8">
+       <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+          <legend class="ph0 mh0 fw6 clip">Write a gossip</legend>
+          <div class="mt3">
+            <label class="db fw4 lh-copy f6" for="email-address">Name <span class="normal black-60">(required)</span></label>
+            <input class="pa2 input-reset ba bg-transparent w-100 measure" type="text" name='author'  id="gossip_author" required>
+          </div>
+          <div class="mt3">
+            <label class="db fw4 lh-copy f6" for="email-address">Content <span class="normal black-60">(required)</label>
+            <input class="pa2 input-reset ba bg-transparent w-100 measure" type="text" name='content'  id="gossip_content" required>
+          </div>
+        </fieldset>
+        <div class="mt3"><input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Send"></div>
+      </form>
+      </article>
+  </body>
+</html>
