@@ -15,17 +15,17 @@
           <table class="f6 w-100 mw8 center" cellspacing="0">
             <thead>
                 <tr>
-                  <th class="fw6 bb b--black-20 tl pb3 pr3">#</th>
-                  <th class="fw6 bb b--black-20 tl pb3 pr3">Name</th>
-                  <th class="fw6 bb b--black-20 tl pb3 pr3">Content</th>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 f3 lh-copy serif">#</th>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 f3 lh-copy serif">Name</th>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 f3 lh-copy serif">Content</th>
                 </tr>
             </thead>
             <tbody class="lh-copy">
               <% gossips.each_with_index do | gossip | %>
                 <tr>
-                  <td class="pv3 pr3 bb b--black-20"><%= gossips.index(gossip) + 1%> </td>
-                  <td class="pv3 pr3 bb b--black-20"><%= gossip.author %></td>
-                  <td class="pv3 pr3 bb b--black-20"><a href="/gossips/<%= gossips.index(gossip)%>"><%= gossip.content %></td>
+                  <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><%= gossips.index(gossip) + 1%> </td>
+                  <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><%= gossip.author %></td>
+                  <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><a href="/gossips/<%= gossips.index(gossip)%>"><%= gossip.content %></td>
                 </tr>
               <% end %>
             </tbody>
