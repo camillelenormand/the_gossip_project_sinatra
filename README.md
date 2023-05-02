@@ -8,3 +8,14 @@
 - Display a single gossip
 - Update a gossip (TO-DO)
 - Delete a gossip (TO-DO)
+
+## Stack
+
+- Ruby
+- Sinatra
+- Tachyons CSS 
+
+## Installation
+
+- git clone
+- bundle install
