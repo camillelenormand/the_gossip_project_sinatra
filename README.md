@@ -22,5 +22,6 @@ quickly creating web applications in Ruby with minimal effort:
 
 ## Installation
 
-- git clone
-- bundle install
+- $ git clone
+- $ bundle install
+- $ rackup -p 4567
