@@ -15,6 +15,7 @@
           <table class="f6 w-100 mw8 center" cellspacing="0">
             <thead>
                 <tr>
+                  <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">#</th>
                   <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Name</th>
                   <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Content</th>
                 </tr>
@@ -22,6 +23,7 @@
             <tbody class="lh-copy">
               <% gossips.each_with_index do | gossip | %>
                 <tr>
+                  <td class="pv3 pr3 bb b--black-20"><%= gossips.index(gossip) + 1%> </td>
                   <td class="pv3 pr3 bb b--black-20"><%= gossip.author %></td>
                   <td class="pv3 pr3 bb b--black-20"><a href="/gossips/<%= gossips.index(gossip)%>"><%= gossip.content %></td>
                 </tr>
