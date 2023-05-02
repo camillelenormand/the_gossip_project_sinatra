@@ -28,8 +28,17 @@ class Gossip
     pp all_gossips
   end
 
-  def self.edit(id, content)
-
+  def self.edit(id, content_updated)
+    all_gossips = self.all
+    CSV.open("./db/gossip.csv", 'w') do |csv|
+      all_gossips.each_with_index do | key |
+        if id.to_i == key
+          csv << [key.author, content_updated]
+        else
+          csv << [key.author, key.content]
+        end
+      end
+    end
   end
 
   def save
@@ -39,4 +48,6 @@ class Gossip
     end
     puts 'Status 200 - OK'
   end
+
 end
+
