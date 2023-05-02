@@ -4,7 +4,7 @@ require 'securerandom'
 class Gossip
   attr_accessor :id, :author, :content
 
-  def initialize(author, content, id = SecureRandom.uuid)
+  def initialize(id = SecureRandom.uuid, author, content)
     @id = id
     @author = author
     @content = content
@@ -12,22 +12,24 @@ class Gossip
 
   def self.all
     all_gossips = []
-    CSV.foreach("./db/gossip.csv") do |row|
-      gossip = Gossip.new(row[1], row[2], row[0])
+    CSV.read("./db/gossip.csv").each do |csv_line|
+      gossip = Gossip.new(csv_line[0], csv_line[1], csv_line[2])
+      pp gossip
       all_gossips << gossip
+      pp all_gossips
     end
-    all_gossips
+    return all_gossips
   end
 
   def self.find(id)
-    CSV.foreach("./db/gossip.csv") do |row|
-      if row[0] == id
-        gossip = Gossip.new(row[1], row[2], row[0])
-        return gossip
-      end
-    end
-    puts "No gossip found with this id"
-    return nil
+    all_gossips = self.all
+    pp all_gossips
+    return all_gossips[id.to_i]
+    pp all_gossips
+  end
+
+  def self.edit(id, content)
+
   end
 
   def save
