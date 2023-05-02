@@ -23,7 +23,7 @@
             <tbody class="lh-copy">
               <% gossips.each_with_index do | gossip | %>
                 <tr>
-                  <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><%= gossip.index(gossip) + 1%> </td>
+                  <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><%= gossips.index(gossip) + 1%> </td>
                   <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><%= gossip.author %></td>
                   <td class="pv3 pr3 bb b--black-20 f3 lh-copy serif"><a href="/gossips/<%= gossips.index(gossip)%>"><%= gossip.content %></td>
                 </tr>
